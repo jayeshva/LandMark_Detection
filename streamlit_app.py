@@ -34,7 +34,7 @@ def get_map(loc):
     return location.address,location.latitude, location.longitude
 
 def run():
-    st.title("Landmark Recognition")
+    st.title("HERITAGE IDENTIFICATION")
     img = PIL.Image.open('logo.png')
     img = img.resize((256,256))
     st.image(img)
@@ -45,7 +45,7 @@ def run():
             f.write(img_file.getbuffer())
         prediction,image = image_processing(save_image_path)
         st.image(image)
-        st.header("📍 **Predicted Landmark is: " + prediction + '**')
+        st.header("📍 **Predicted Heritage is: " + prediction + '**')
         try:
             address, latitude, longitude = get_map(prediction)
             st.success('Address: '+address )
